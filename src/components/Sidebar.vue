@@ -1,32 +1,44 @@
 <script setup>
 import FloppyTray from './FloppyTray.vue'
+import Skills from './Skills.vue'
+import HardDrive from './HardDrive.vue'
 </script>
 
 <template>
-  <FloppyTray>
-    <RouterLink class="floppy" to="/">
-      <img src="../assets/images/blue_floppy.png">
-      <p class="floppy-text">Home</p>
+  <div class="sidebar">
+    <RouterLink to="/">
+      <HardDrive label="Home" colour="#4c98ce"/>
     </RouterLink>
-    <RouterLink class="floppy" to="/about">
-      <img src="../assets/images/green_floppy.png">
-      <p class="floppy-text">About</p>
+    <RouterLink to="/about">
+      <HardDrive label="About" colour="#b3bd5c"/>
     </RouterLink>
-    <RouterLink class="floppy" to="/skills">
-      <img src="../assets/images/orange_floppy.png">
-      <p class="floppy-text">Skills</p>
+    <RouterLink to="/skills">
+      <HardDrive label="Skills" colour="#ff8f2b"/>
     </RouterLink>
-    <RouterLink class="floppy" to="/projects">
-      <img src="../assets/images/red_floppy.png">
-      <p class="floppy-text">Projects</p>
+    <RouterLink to="/projects">
+      <HardDrive label="Projects" colour="#d23d3d"/>
     </RouterLink>
-    <RouterLink class="floppy" to="/contact">
-      <img src="../assets/images/purple_floppy.png">
-      <p class="floppy-text">Contact</p>
+    <RouterLink to="/contact">
+      <HardDrive label="Contact" colour="#9654b0"/>
     </RouterLink>
-  </FloppyTray>
+  </div>
+  <Skills />
 </template>
 
 <style scoped lang="scss">
+
+.sidebar {
+  display: flex;
+  padding: 0 5px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  background-color: #eed1b3;
+  border: 2px solid #faddc0;
+  z-index: 100;
+}
 
 </style>

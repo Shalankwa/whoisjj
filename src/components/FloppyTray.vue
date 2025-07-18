@@ -18,7 +18,7 @@
   flex-direction: column;
   align-items: center;
   position: fixed;
-  top: 30%;
+  top: 10%;
   left: 0;
   background-color: #eed1b3;
   border: 2px solid #faddc0;
