@@ -3,12 +3,12 @@ import Screen from '../components/Screen.vue'
 </script>
 
 <template>
-  <div class="">
-    <!-- <h1>This is an home page</h1> -->
-  </div>
-  <Screen>
     <h1>Skills</h1>
-  </Screen>
 </template>
 
-<style></style>
+<style>
+.test {
+    margin: 0;
+    margin-left: auto;
+}
+</style>

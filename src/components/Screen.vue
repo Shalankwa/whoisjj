@@ -1,10 +1,14 @@
 <script setup>
-import TypeWriter from './TypeWriter.vue';
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
+
+const route = useRoute()
+const isSkillsPage = computed(() => route.path === '/skills')
 
 </script>
 
 <template>
-  <div class="greetings">
+  <div class="main-content" :class="{ right: isSkillsPage }">
     <div class="pc-screen scanlines">
       <slot></slot>
     </div>
@@ -14,13 +18,18 @@ import TypeWriter from './TypeWriter.vue';
 
 <style scoped lang="scss">
 
-.greetings {
+.main-content {
   position: relative;
   width: fit-content;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.5s ease-in-out;
+
+  &.right {
+    margin-left: 450px;
+  }
 }
 
 .retro-pc {
@@ -65,7 +74,7 @@ import TypeWriter from './TypeWriter.vue';
   z-index: 2;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1920px) {
   .retro-pc {
     width: 1000px;
   }

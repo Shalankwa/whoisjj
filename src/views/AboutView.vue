@@ -1,14 +1,11 @@
 <script setup>
-import Screen from '../components/Screen.vue'
+import Card from '../components/Card3D.vue'
 </script>
 
 <template>
-  <div class="">
-    <!-- <h1>This is an home page</h1> -->
-  </div>
-  <Screen>
-    <h1>About</h1>
-  </Screen>
+  <Card>
+
+  </Card>
 </template>
 
 <style></style>

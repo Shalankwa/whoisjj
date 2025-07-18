@@ -1,15 +1,14 @@
 @import './base.css';
 
 #app {
-  max-width: 1400px;
-  min-width: none;
-  margin: 0 auto;
   font-weight: normal;
 }
 
 body {
   display: flex;
-  place-items: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .floppy {
@@ -32,7 +31,7 @@ body {
 
   &:hover {
     cursor: pointer;
-    transform: translateY(-55px);
+    transform: translateY(-35px);
   }
 
   p {
