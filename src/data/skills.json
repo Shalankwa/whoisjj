@@ -1,0 +1,86 @@
+{
+  "golang": {
+    "name": "Golang",
+    "colour": "#00acd7",
+    "icon": "golang.svg",
+    "category": "language"
+  },
+  "python": {
+    "name": "Python",
+    "colour": "#FFD43B",
+    "icon": "python.svg",
+    "category": "language"
+  },
+  "ruby": {
+    "name": "Ruby",
+    "colour": "#a32a24",
+    "icon": "ruby.svg",
+    "category": "language"
+  },
+  "vue": {
+    "name": "Vue",
+    "colour": "#30a46c",
+    "icon": "vue.svg",
+    "category": "framework"
+  },
+  "react": {
+    "name": "React",
+    "colour": "#0081A3",
+    "icon": "react.svg",
+    "category": "framework"
+  },
+  "django": {
+    "name": "Django",
+    "colour": "#20aa76",
+    "icon": "django.svg",
+    "category": "framework"
+  },
+  "flask": {
+    "name": "Flask",
+    "colour": "#004b6b",
+    "icon": "flask.svg",
+    "category": "framework"
+  },
+  "mysql": {
+    "name": "MySQL",
+    "colour": "#00758F",
+    "icon": "mysql.svg",
+    "category": "database"
+  },
+  "postgresql": {
+    "name": "PostgreSQL",
+    "colour": "#336791",
+    "icon": "postgresql.svg",
+    "category": "database"
+  },
+  "docker": {
+    "name": "Docker",
+    "colour": "#1D63ED",
+    "icon": "docker.svg",
+    "category": "devops"
+  },
+  "kubernetes": {
+    "name": "Kubernetes",
+    "colour": "#326de6",
+    "icon": "kubernetes.svg",
+    "category": "devops"
+  },
+  "aws": {
+    "name": "AWS",
+    "colour": "#FF9900",
+    "icon": "aws.svg",
+    "category": "cloud"
+  },
+  "git": {
+    "name": "Git",
+    "colour": "#ee513b",
+    "icon": "git.svg",
+    "category": "version control"
+  },
+  "ci-cd": {
+    "name": "CI/CD",
+        "colour": "darkgray",
+    "icon": "cicd.svg",
+    "category": "devops"
+  }
+}
