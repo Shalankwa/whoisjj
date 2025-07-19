@@ -10,20 +10,15 @@ const props = defineProps({
   text: {
     type: String,
     required: true,
+  },
+  icon: {
+    type: String,
+    required: false,
   }
 })
 
-const imageMap = {
-  red: new URL('../assets/images/red_floppy.png', import.meta.url).href,
-  blue: new URL('../assets/images/blue_floppy.png', import.meta.url).href,
-  green: new URL('../assets/images/green_floppy.png', import.meta.url).href,
-  orange: new URL('../assets/images/orange_floppy.png', import.meta.url).href,
-  purple: new URL('../assets/images/purple_floppy.png', import.meta.url).href,
-  tan: new URL('../assets/images/tan_floppy.png', import.meta.url).href,
-  teal: new URL('../assets/images/teal_floppy.png', import.meta.url).href,
-}
-
-const imageSrc = computed(() => imageMap[props.colour] || imageMap.red)
+const icons = import.meta.glob('@/assets/images/skills/*.svg', { eager: true, import: 'default' });
+const icon = icons[`/src/assets/images/skills/${props.icon}`];
 
 const floppy = ref(null)
 let bounds
@@ -103,6 +98,7 @@ onUnmounted(() => {
     <div ref="floppy" class="floppy-3d">
       <div class="floppy-label">
         <p class="floppy-text">{{ text }}</p>
+        <img class="floppy-icon" :src="icon" alt="skill icon">
       </div>
       <!-- <div class="glow"></div> -->
       <div class="floppy-reader"></div>
@@ -120,8 +116,18 @@ onUnmounted(() => {
   cursor: pointer;
 }
 
+.floppy-icon {
+  position: relative;
+  margin-top: 15px;
+  align-self: center;
+  width: 80px;
+  height: 40px;
+}
+
 .floppy-label {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   width: 70%;
   height: 60%;
   margin-left: 15%;
@@ -216,14 +222,9 @@ onUnmounted(() => {
     );
   }
 
-  img {
-    width: 100%;
-    height: 100%;
-  }
-
   p {
     position: absolute;
-    top: 15px;
+    bottom: 12px;
     left: 0;
     width: 100%;
     text-align: center;
@@ -232,11 +233,7 @@ onUnmounted(() => {
     font-family: "Permanent Marker", cursive;
     font-weight: 400;
     font-style: normal;
+    font-size: 18px;
   }
-
-  img {
-    pointer-events: none;
-  }
-  
 }
 </style>

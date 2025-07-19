@@ -4,63 +4,20 @@ import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 import Floppy from './Floppy3D.vue'
 
-const skills = ref([
-  {
-    name: 'JavaScript',
-    colour: '#ac3232',
-    icon: 'red_floppy.png',
-  },
-  {
-    name: 'HTML',
-    colour: '#8f974a',
-    icon: 'blue_floppy.png',
-  },
-  {
-    name: 'CSS',
-    colour: '#df7126',
-    icon: 'green_floppy.png',
-  },
-  {
-    name: 'React',
-    colour: 'beige',
-    icon: 'orange_floppy.png',
-  },
-  {
-    name: 'Node.js',
-    colour: '#306082',
-    icon: 'purple_floppy.png',
-  },
-  {
-    name: 'JavaScript',
-    colour: '#8f974a',
-    icon: 'red_floppy.png',
-  },
-  {
-    name: 'HTML',
-    colour: '#306082',
-    icon: 'blue_floppy.png',
-  },
-  {
-    name: 'CSS',
-    colour: 'teal',
-    icon: 'green_floppy.png',
-  },
-  {
-    name: 'React',
-    colour: '#ac3232',
-    icon: 'orange_floppy.png',
-  }
-])
+import { skills } from '@/data/skills.js'
+
 
 const route = useRoute()
-const isSkillsPage = computed(() => route.path === '/skills')
+const isSkillsPage = computed(() => route.path.startsWith('/skills'))
 
 </script>
 
 <template>
   <div class="skills" :class="{ show: isSkillsPage }">
-    <div v-for="skill in skills" :key="skill.name" class="skill">
-      <Floppy :colour="skill.colour" :text="skill.name" />
+    <div v-for="[key, skill] in Array.from(skills)" :key="key" class="skill">
+      <RouterLink :to="`/skills/${key}`">
+        <Floppy :colour="skill.colour" :text="skill.name" :icon="skill.icon" />
+      </RouterLink>
     </div>
   </div>
 </template>
@@ -69,19 +26,24 @@ const isSkillsPage = computed(() => route.path === '/skills')
 .skills {
   position: absolute;
   z-index: 100;
-  width: 200px;
-  top: -100vh;
-  left: 180px;
-  display: flex;
-  flex-direction: column;
+  width: 400px;
+  top: -105vh;
+  left: 160px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   overflow-y: scroll;
   scroll-behavior: smooth;
   height: 100vh;
-  transition: all 0.5s ease-in-out;
+  transition: top 0.5s ease-in-out;
 
   &.show {
     top: 0;
+  }
+
+  @media screen and (max-width: 1600px) {
+    width: 200px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
 

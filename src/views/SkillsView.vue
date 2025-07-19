@@ -1,14 +1,18 @@
 <script setup>
-import Screen from '../components/Screen.vue'
+import TypeWriter from '@/components/TypeWriter.vue';
 </script>
 
 <template>
-    <h1>Skills</h1>
+    <div class="screen-center">
+        <TypeWriter msg="Load a floppy disk to learn more!💾" />
+    </div>
 </template>
 
 <style>
-.test {
-    margin: 0;
-    margin-left: auto;
+.screen-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%
 }
 </style>
