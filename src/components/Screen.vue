@@ -3,7 +3,7 @@ import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 
 const route = useRoute()
-const isSkillsPage = computed(() => route.path === '/skills')
+const isSkillsPage = computed(() => route.path.startsWith('/skills'))
 
 </script>
 
@@ -12,7 +12,7 @@ const isSkillsPage = computed(() => route.path === '/skills')
     <div class="pc-screen scanlines">
       <slot></slot>
     </div>
-    <img src="../assets/images/retro_pc_clear.png" alt="Retro PC" class="retro-pc">
+    <img src="../assets/images/retro_pc_clear_cropped.png" alt="Retro PC" class="retro-pc">
   </div>
 </template>
 
@@ -41,16 +41,14 @@ const isSkillsPage = computed(() => route.path === '/skills')
 .pc-screen {
   font-family: "Bitcount Grid Double", system-ui;
   position: absolute;
-  top: 12%;
-  width: 58%;
-  height: 48%;
+  top: 8%;
+  width: 71%;
+  height: 55%;
   padding: 20px;
   padding-left: 25px;
   color: #cdff8b;
   background-color: #696a6a;
   z-index: 1;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
 }
 
 .scanlines {
@@ -76,9 +74,20 @@ const isSkillsPage = computed(() => route.path === '/skills')
 
 @media (max-width: 1920px) {
   .retro-pc {
+    width: 1200px;
+  }
+}
+
+@media (max-width: 1700px) {
+  .retro-pc {
     width: 1000px;
   }
+}
 
+@media (max-width: 1250px) {
+  .retro-pc {
+    width: 800px;
+  }
 }
 
 </style>

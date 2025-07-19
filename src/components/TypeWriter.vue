@@ -24,7 +24,7 @@ function typewrite(text) {
     index.value++
     setTimeout(() => {
       typewrite(text)
-    }, 100)
+    }, 50)
   }
 }
 
@@ -43,6 +43,7 @@ function typewrite(text) {
   border-right: 8px solid #cdff8b;
   animation: blink-caret 0.75s infinite alternate;
   font-size: 1.5em;
+  line-height: 1.5em;
   width: fit-content;
 }
 

@@ -23,6 +23,7 @@ const props = defineProps({
   position: relative;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
+  z-index: 102;
 
   img {
     width: 120px;
@@ -33,13 +34,13 @@ const props = defineProps({
     position: absolute;
     background-color: v-bind(colour);
     text-align: center;
-    margin: 0 10%;
+    margin: 0 7%;
     padding: 0 5px;
-    width: 80%;
-    bottom: 20%;
+    width: 86%;
+    bottom: 18%;
     font-family: "Silkscreen", sans-serif;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 14px;
     color: #ffffff;
   }
 
@@ -56,18 +57,6 @@ const props = defineProps({
   60% { transform: translate(1px, 2px) rotate(0deg); }
   80% { transform: translate(-1px, -2px) rotate(1deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-.silkscreen-regular {
-  font-family: "Silkscreen", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.silkscreen-bold {
-  font-family: "Silkscreen", sans-serif;
-  font-weight: 700;
-  font-style: normal;
 }
 
 </style>

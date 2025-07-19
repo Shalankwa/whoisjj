@@ -28,17 +28,42 @@ import HardDrive from './HardDrive.vue'
 <style scoped lang="scss">
 
 .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: scroll;
   display: flex;
+  gap: 5px;
   padding: 0 5px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  height: 100vh;
-  left: 0;
   background-color: #eed1b3;
-  border: 2px solid #faddc0;
+  border: 4px solid #6f6967;
   z-index: 100;
+
+  &::after {
+    content: "Fragile";
+    font-family: "Silkscreen", sans-serif;
+    font-size: 20px;
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0px;
+    text-align: center;
+    z-index: 100;
+    background-color: #c09b7b;
+    color: transparent;
+    text-shadow: 2px 2px 3px #eed1b3;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    pointer-events: none;
+  }
 }
 
 </style>
