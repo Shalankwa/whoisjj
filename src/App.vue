@@ -1,18 +1,17 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/Screen.vue'
 import Sidebar from './components/Sidebar.vue';
 import Screen from './components/Screen.vue'
+import Background from './components/Background.vue'
 </script>
 
 <template>
   <header></header>
-  <body>
-    <Screen>
-      <RouterView />
-    </Screen>
-    <Sidebar /> 
-  </body>
+  <Background />
+  <Screen>
+    <RouterView />
+  </Screen>
+  <Sidebar /> 
 </template>
 
 <style scoped>
