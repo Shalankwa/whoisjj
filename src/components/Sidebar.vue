@@ -31,11 +31,10 @@ import HardDrive from './HardDrive.vue'
   position: fixed;
   top: 0;
   left: 0;
+  width: $sidebar-width;
   height: 100vh;
-  overflow-y: scroll;
   display: flex;
   gap: 5px;
-  padding: 0 5px;
   flex-direction: column;
   justify-content: center;
   align-items: center;

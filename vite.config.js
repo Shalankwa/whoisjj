@@ -12,6 +12,13 @@ export default defineConfig({
     vueDevTools(),
     tailwind(),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/assets/variables" as *;`
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
