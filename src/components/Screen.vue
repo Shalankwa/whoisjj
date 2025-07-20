@@ -9,39 +9,49 @@ const isSkillsPage = computed(() => route.path.startsWith('/skills'))
 
 <template>
   <div class="main-content" :class="{ right: isSkillsPage }">
-    <div class="pc-screen scanlines">
-      <slot></slot>
+    <div class="retro-pc-container">
+      <div class="pc-screen scanlines">
+        <slot></slot>
+      </div>
+      <img src="../assets/images/retro_pc_clear_cropped.png" alt="Retro PC" class="retro-pc">
     </div>
-    <img src="../assets/images/retro_pc_clear_cropped.png" alt="Retro PC" class="retro-pc">
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 
 .main-content {
   position: relative;
   width: fit-content;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   transition: all 0.5s ease-in-out;
+
+  margin-left: $sidebar-width;
 
   &.right {
     margin-left: 450px;
   }
 }
 
+.retro-pc-container {
+  position: relative;
+}
+
 .retro-pc {
-  width: 1400px;
+  position: relative;
   z-index: 2;
   pointer-events: none;
+  max-height: 100vh;
 }
 
 .pc-screen {
   font-family: "Bitcount Grid Double", system-ui;
   position: absolute;
   top: 8%;
+  left: 15%;
   width: 71%;
   height: 55%;
   padding: 20px;
@@ -49,6 +59,14 @@ const isSkillsPage = computed(() => route.path.startsWith('/skills'))
   color: #cdff8b;
   background-color: #696a6a;
   z-index: 1;
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
 }
 
 .scanlines {
@@ -72,21 +90,17 @@ const isSkillsPage = computed(() => route.path.startsWith('/skills'))
   z-index: 2;
 }
 
-@media (max-width: 1920px) {
-  .retro-pc {
-    width: 1200px;
-  }
-}
-
-@media (max-width: 1700px) {
-  .retro-pc {
-    width: 1000px;
-  }
-}
-
-@media (max-width: 1250px) {
-  .retro-pc {
-    width: 800px;
+@media screen and (max-width: $desktop-width) {
+  .pc-screen {
+    h2 {
+      font-size: 18px;
+    }
+    h3 {
+      font-size: 14px;
+    }
+    p {
+      font-size: 12px;
+    }
   }
 }
 

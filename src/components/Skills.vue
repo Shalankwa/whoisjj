@@ -41,7 +41,7 @@ const isSkillsPage = computed(() => route.path.startsWith('/skills'))
     top: 0;
   }
 
-  @media screen and (max-width: 1600px) {
+  @media screen and (max-width: $large-screen) { 
     width: 200px;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
