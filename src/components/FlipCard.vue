@@ -15,10 +15,10 @@ var flipped = ref(props.flipped)
 
 <template>
     <div class="flip-card" :class="{ flipped: flipped }" @click="flipped = !flipped">
-        <div class="front">
+        <div class="front pixel-corners">
             <slot name="front"></slot>
         </div>
-        <div class="back">
+        <div class="back pixel-corners">
             <slot name="back"></slot>
         </div>
     </div>
@@ -53,14 +53,10 @@ var flipped = ref(props.flipped)
   }
 
   .front {
-    background-color: #ac3232;
-    color: #ffffff;
     transform: rotateY(0deg);
   }
 
   .back {
-    background-color: #ffffff;
-    color: #000000;
     transform: rotateY(180deg);
   }
 }
