@@ -50,15 +50,20 @@ const isSkillsPage = computed(() => route.path.startsWith('/skills'))
 .pc-screen {
   font-family: "Bitcount Grid Double", system-ui;
   position: absolute;
-  top: 8%;
-  left: 15%;
-  width: 71%;
-  height: 55%;
+  top: 7%;
+  left: 14%;
+  width: 72%;
+  height: 56%;
   padding: 20px;
   padding-left: 25px;
+  overflow: clip;
   color: #cdff8b;
   background-color: #696a6a;
   z-index: 1;
+
+  h1 {
+    font-size: 32px;
+  }
 
   h2 {
     font-size: 24px;
