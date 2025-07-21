@@ -39,13 +39,28 @@ import FlipCard from '@/components/FlipCard.vue'
           <a class="badge" href="https://www.github.com/Shalankwa" target="_blank" rel="noopener noreferrer">
             <img src="../assets/images/icons/github.svg" alt="github">
           </a>
+          <p class="arrow">▲</p>
         </div>
       </div>
     </template>
     <template #back>
       <div class="card-back">
-        <h1>Stuff back</h1>
-        <p>THis is the back side</p>
+        <div class="flex flex-col items-center p-4 h-8/10 w-full overflow-y-auto">
+          <h1>> Whoami?</h1>
+          <hr>
+          <div class="mb-4">
+            <p class="mt-4 indent-4">
+              Hello! My name is Jonathan, but most people call me JJ. I'm a Canadian-born software engineer currently living in Tokyo, Japan.
+              I moved here in 2020 and decided to stay after falling in love with the mountainous landscape and delicious food.
+            </p>
+            <p class="mt-4 indent-4">
+              I have a passion for learning new things and solving difficult problems.
+              I enjoy working with other people and collaborating on projects to create new and exciting software.
+            </p>
+          </div>
+          <hr>
+          <p class="arrow back">▲</p>
+        </div>
       </div>
     </template>
   </FlipCard>
@@ -53,25 +68,59 @@ import FlipCard from '@/components/FlipCard.vue'
 
 <style scoped lang="scss">
 
+$card-primary-color: #b8e0c8;
+$card-secondary-color: #8ead9a;
+
+.arrow {
+  position: absolute;
+  width: fit-content;
+  right: 20px;
+  color: #eed1b3;
+  rotate: 90deg;
+  font-size: 28px;
+  line-height: 40px;
+  cursor: pointer;
+
+  &.back {
+    rotate: 270deg;
+    bottom: 6%;
+    left: 20px;
+  }
+}
+
+hr {
+  width: 100%;
+  border: #b8e0c8 solid 2px;
+}
+
+@keyframes fliphint {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .card-header {
   display: flex;
   align-items:  center;
   gap: 4px;
   justify-content: space-between;
-  background-color: #8ead9a;
+  background-color: $card-secondary-color;
   color: white;
   padding: 10px;
   margin-top: 21px;
 
   h2 {
     padding: 4px 20px;
-    border-top: #b8e0c8 solid 4px;
-    border-bottom: #b8e0c8 solid 4px;
+    border-top: $card-primary-color solid 4px;
+    border-bottom: $card-primary-color solid 4px;
   }
 
   h3 {
     padding: 10px 20px;
-    background-color: #b8e0c8;
+    background-color: $card-primary-color;
   }
 }
 
@@ -85,36 +134,53 @@ import FlipCard from '@/components/FlipCard.vue'
   div {
     display: flex;
     justify-content: space-between;
-    background-color: #8ead9a;
+    background-color: $card-secondary-color;
     padding: 8px 12px;
   }
 }
 
 .card-front, .card-back {
+  position: relative;
   width: 100%;
   height: 100%;
-  background-color: #b8e0c8;
+  background-color: $card-primary-color;
   color: white;
+
+  &:hover {
+    .arrow {
+      animation: fliphint 0.5s infinite;
+    }
+  }
 }
 
 .card-back {
   height: 100%;
+  background-color: $card-secondary-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background-color: $card-primary-color;
+  }
 }
 
 .trainer {
   /* width: 160px; */
   padding: 4px;
-  background-color: #8ead9a;
+  background-color: $card-secondary-color;
   height: 100%;
 }
 
 .card-footer {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  background-color: #8ead9a;
+  background-color: $card-secondary-color;
   margin-bottom: 18px;
   padding: 4px 14px;
 
@@ -125,7 +191,7 @@ import FlipCard from '@/components/FlipCard.vue'
     position: absolute;
     bottom: -8px;
     width: 100%;
-    border-bottom: #8ead9a solid 4px;
+    border-bottom: $card-secondary-color solid 4px;
   }
 
   .badge {
