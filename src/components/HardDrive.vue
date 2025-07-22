@@ -1,4 +1,11 @@
 <script setup>
+import { useRoute } from 'vue-router'
+import { watch } from 'vue'
+import { ref, onMounted } from 'vue'
+
+import HDgif from '../assets/images/HardDrive_Medium.gif'
+import HDpng from '../assets/images/HardDrive_Medium.png'
+
 const props = defineProps({
   colour: {
     type: String,
@@ -9,11 +16,24 @@ const props = defineProps({
     required: true,
   }
 })
+
+const HDImg = ref(null)
+const route = useRoute()
+watch(route, () => {
+  if (route.path.startsWith('/' + props.label.toLowerCase())) {
+    HDImg.value.src = HDgif
+  } else if (props.label.toLowerCase() === 'home' && route.path === '/') {
+    HDImg.value.src = HDgif
+  } else {
+    HDImg.value.src = HDpng
+  }
+})
+
 </script>
 
 <template>
   <div class="hard-drive">
-    <img src="../assets/images/HardDrive_Medium.png" draggable="false">
+    <img :src="HDpng" draggable="false" ref="HDImg">
     <p>{{ label }}</p>
   </div>
 </template>
