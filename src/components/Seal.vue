@@ -27,7 +27,6 @@
   flex-direction: column;
   width: 100px;
   height: 100px;
-  /* background-color: gold; */
   border: gold solid 10px;
   border-radius: 50%;
   font-size: 20px;

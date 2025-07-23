@@ -47,7 +47,6 @@ function move(index) {
 
 <template>
   <div class="carousel" ref="carousel">
-    <h1>Projects!</h1>
     <div class="carousel__slider" ref="slider">
       <div v-for="project in projects">
         <Project :name="project" :width="itemWidthpx"  ref="items" /> 
