@@ -10,11 +10,12 @@ const props = defineProps({
     image: {
         type: String,
         required: false,
-        default: "../assets/images/skills/python.svg",
+        default: "python.svg",
     }    
 })
 
-const imageUrl = new URL(props.image, import.meta.url).href
+const icons = import.meta.glob('@/assets/images/skills/*.svg', { eager: true, import: 'default' });
+const langIcon = icons[`/src/assets/images/skills/${props.image}`];
 
 
 </script>
@@ -25,7 +26,7 @@ const imageUrl = new URL(props.image, import.meta.url).href
             <polygon points="2,20 98,2 80,98 2,98" class="badge" id="badge"/>
         </svg>
         <p class="language">{{ props.lang }}</p>
-        <img :src="imageUrl" class="lang-img">
+        <img :src="langIcon" class="lang-img">
     </div>
 </template>
 
