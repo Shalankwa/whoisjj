@@ -35,11 +35,15 @@ onMounted(() => {
 
 <template>
   <div class="frame__3d">
-    <div class="project__front" ref="project">
-      {{ name }}
-      <div class="project-seal">
-        <Seal />
+    <div class="project__box" ref="project">
+      <div class="project__front">
+        {{ name }}
+        <div class="project-seal">
+          <Seal />
+        </div>
       </div>
+      <div class="project__left"></div>
+      <div class="project__right"></div>
     </div>
   </div>
 </template>
@@ -62,44 +66,43 @@ onMounted(() => {
 
 .project {
     
-  &__front {
-    resize: both;
+  &__box {
     position: relative;
-    border: black solid 6px;
-    // background-color: black;
-    display: inline-block;
     height: calc(250px * 1.4); 
     width: 250px;
-    z-index: 2;
     transition: all linear 0.5s;
     transform-style: preserve-3d;
     transform: rotateY(v-bind(rotation));
+  }
+
+  &__front {
+    width: 100%;
+    height: 100%;
+    border: black solid 6px;
     background-color: #5a5a5a;
+  }
 
-
-    &::after, &::before {
+  &__left, &__right {
       content: '';
       position: absolute;
       top: 0;
       width: 80px;
       height: 100%;
-      height: calc(100% + 12px);
       border: solid black 6px;
       background-color: #5a5a5a;
     }
 
-    &::before {
+    &__left {
       left: 0;
       transform-origin: 0%;
-      transform: translate3d(-6px, -6px, -80px) rotateY(-90deg);
+      transform: translate3d(0px, 0px, -80px) rotateY(-90deg);
     }
 
-    &::after {
+    &__right {
       right: 0;
       transform-origin: 100%;
-      transform: translate3d(6px, -6px, -80px) rotateY(90deg);
+      transform: translate3d(0px, -0px, -80px) rotateY(90deg);
     }
-  }
 }
 
 </style>
