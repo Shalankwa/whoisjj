@@ -1,13 +1,13 @@
 <script setup>
 import { onMounted, ref, useTemplateRef } from 'vue';
 import { clamp } from '@/utils/toolbox';
-import Seal from '../components/Seal.vue'
 import Project from '../components/Project.vue'
+import { projects } from '@/data/loader.js'
 
 const itemWidth = 250; 
 const itemWidthpx = itemWidth + 'px';
 
-const projects = ref(["Project1", "Project2", "Project3", "Project4"]);
+// const projects = ref(["Project1", "Project2", "Project3", "Project4"]);
 const itemRefs = useTemplateRef('items');
 
 var currIndex = 0;
@@ -20,12 +20,12 @@ onMounted(() => {
 })
 
 function prev() {
-  currIndex = clamp(--currIndex, 0, projects.value.length - 1)
+  currIndex = clamp(--currIndex, 0, projects.size - 1)
   move(currIndex);
 }
 
 function next() {
-  currIndex = clamp(++currIndex, 0, projects.value.length - 1)
+  currIndex = clamp(++currIndex, 0, projects.size - 1)
   move(currIndex);
 }
 
@@ -48,8 +48,8 @@ function move(index) {
 <template>
   <div class="carousel" ref="carousel">
     <div class="carousel__slider" ref="slider">
-      <div v-for="project in projects">
-        <Project :name="project" :width="itemWidthpx"  ref="items" /> 
+      <div v-for="[key, project] in Array.from(projects)" :key="key">
+        <Project :name="project.name" :width="itemWidthpx"  ref="items" /> 
       </div>
     </div>
     <div class="flex justify-center gap-6">

@@ -1,6 +1,6 @@
 
 <script setup>
-import { skills } from '@/data/skills.js'
+import { skills } from '@/data/loader.js'
 import { watch } from 'vue'
 import { useRoute } from 'vue-router'
 import LoadingBar from '../components/LoadingBar.vue'
