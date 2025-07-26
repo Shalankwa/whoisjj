@@ -12,7 +12,7 @@
         "description": "A template for creating and releasing Go applications using goreleaser.",
         "url": "https://github.com/Shalankwa/go-release-blueprint",
         "coverImage": "portfolio_cover.png",
-        "icon": "golang.svg",
+        "icon": "golang-box.svg",
         "lang": "Golang"
     },
     "project3": {
