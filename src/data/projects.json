@@ -1,27 +1,26 @@
 {
-    "Project1": {
-        "name": "Project1",
-        "description": "Project1 description",
-        "url": "https://github.com/shalankwa/portfolio-site"
+    "project1": {
+        "name": "Portfolio",
+        "description": "My portfolio website. Created using the Vue.js framework. Currently what you're seeing!",
+        "url": "https://github.com/shalankwa/portfolio-site",
+        "coverImage": "portfolio_cover.png",
+        "icon": "vue.svg",
+        "lang": "Vue"
     },
-    "Project2": {
-        "name": "Project2",
-        "description": "Project2 description",
-        "url": "https://github.com/shalankwa/portfolio-site"
+    "project2": {
+        "name": "Go Blueprint!",
+        "description": "A template for creating and releasing Go applications using goreleaser.",
+        "url": "https://github.com/Shalankwa/go-release-blueprint",
+        "coverImage": "portfolio_cover.png",
+        "icon": "golang.svg",
+        "lang": "Golang"
     },
-    "Project3": {
-        "name": "Project3",
-        "description": "Project3 description",
-        "url": "https://github.com/shalankwa/portfolio-site"
-    },
-    "Project4": {
-        "name": "Project4",
-        "description": "Project4 description",
-        "url": "https://github.com/shalankwa/portfolio-site"
-    },
-    "Project5": {
-        "name": "Project5",
-        "description": "Project5 description",
-        "url": "https://github.com/shalankwa/portfolio-site"
+    "project3": {
+        "name": "Teledaemon",
+        "description": "Simple daemonset for running telegraf metrics collector in a Kubernetes cluster as a daemonset.", 
+        "url": "https://github.com/shalankwa/portfolio-site",
+        "coverImage": "portfolio_cover.png",
+        "icon": "kubernetes.svg",
+        "lang": "K8s"
     }
 }

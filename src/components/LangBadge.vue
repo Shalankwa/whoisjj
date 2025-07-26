@@ -17,7 +17,6 @@ const props = defineProps({
 const icons = import.meta.glob('@/assets/images/skills/*.svg', { eager: true, import: 'default' });
 const langIcon = icons[`/src/assets/images/skills/${props.image}`];
 
-
 </script>
 
 <template>

@@ -49,7 +49,7 @@ function move(index) {
   <div class="carousel" ref="carousel">
     <div class="carousel__slider" ref="slider">
       <div v-for="[key, project] in Array.from(projects)" :key="key">
-        <Project :name="project.name" :width="itemWidthpx"  ref="items" /> 
+        <Project :name="key" :width="itemWidthpx"  ref="items" /> 
       </div>
     </div>
     <div class="flex justify-center gap-6">
