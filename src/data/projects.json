@@ -5,22 +5,25 @@
         "url": "https://github.com/shalankwa/portfolio-site",
         "coverImage": "portfolio_cover.png",
         "icon": "vue.svg",
-        "lang": "Vue"
+        "lang": "Vue",
+        "primaryColor": "#b3bd5c"
     },
     "project2": {
         "name": "Go Blueprint!",
         "description": "A template for creating and releasing Go applications using goreleaser.",
         "url": "https://github.com/Shalankwa/go-release-blueprint",
-        "coverImage": "portfolio_cover.png",
+        "coverImage": "goreleaser_hero.png",
         "icon": "golang-box.svg",
-        "lang": "Golang"
+        "lang": "Golang",
+        "primaryColor": "#00acd7"
     },
     "project3": {
         "name": "Teledaemon",
         "description": "Simple daemonset for running telegraf metrics collector in a Kubernetes cluster as a daemonset.", 
         "url": "https://github.com/shalankwa/portfolio-site",
-        "coverImage": "portfolio_cover.png",
+        "coverImage": "telegraf-logo.png",
         "icon": "kubernetes.svg",
-        "lang": "K8s"
+        "lang": "K8s",
+        "primaryColor": "#326de6"
     }
 }

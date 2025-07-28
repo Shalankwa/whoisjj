@@ -23,15 +23,11 @@ const props = defineProps({
     type: String,
     required: false,
     default: "0deg",
-  },
-  primaryColor: {
-    type: String,
-    required: false,
-    default: "#b3bd5c",
-  },
+  }
 })
 
 const project = getProject(props.name)
+const primaryColor = project.primaryColor
 var rotation = ref("0deg")
 
 const projectCovers = import.meta.glob('@/assets/images/projects/*.png', { eager: true, import: 'default' });
