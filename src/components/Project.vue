@@ -132,9 +132,10 @@ $depth-neg: calc($depth * -1);
 
     &-img {
       position: absolute;
-      transform: rotate(10deg);
-      top: 10%;
-      left: 0;
+      top: 60%;
+      left: 50%;
+      width: calc(v-bind(width) * 0.8);
+      transform: translate(-50%, -50%) rotate(10deg);
       clip-path: url(#cover);
     }
   }
