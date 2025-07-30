@@ -3,13 +3,15 @@
     "name": "Golang",
     "colour": "#00acd7",
     "icon": "golang.svg",
-    "category": "language"
+    "category": "language",
+    "proficiency": 0.66
   },
   "python": {
     "name": "Python",
     "colour": "#FFD43B",
     "icon": "python.svg",
-    "category": "language"
+    "category": "language",
+    "proficiency": 0.22
   },
   "ruby": {
     "name": "Ruby",
