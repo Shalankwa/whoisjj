@@ -1,0 +1,29 @@
+{
+    "project1": {
+        "name": "Portfolio",
+        "description": "My portfolio website. Created using the Vue.js framework. Currently what you're seeing!",
+        "url": "https://github.com/shalankwa/portfolio-site",
+        "coverImage": "portfolio_cover.png",
+        "icon": "vue.svg",
+        "lang": "Vue",
+        "primaryColor": "#b3bd5c"
+    },
+    "project2": {
+        "name": "Go Blueprint!",
+        "description": "A template for creating and releasing Go applications using goreleaser.",
+        "url": "https://github.com/Shalankwa/go-release-blueprint",
+        "coverImage": "goreleaser_hero.png",
+        "icon": "golang-box.svg",
+        "lang": "Golang",
+        "primaryColor": "#00acd7"
+    },
+    "project3": {
+        "name": "Teledaemon",
+        "description": "Simple daemonset for running telegraf metrics collector in a Kubernetes cluster as a daemonset.", 
+        "url": "https://github.com/shalankwa/portfolio-site",
+        "coverImage": "telegraf-logo.png",
+        "icon": "kubernetes.svg",
+        "lang": "K8s",
+        "primaryColor": "#326de6"
+    }
+}

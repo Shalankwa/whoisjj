@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 import Floppy from './Floppy3D.vue'
 
-import { skills } from '@/data/skills.js'
+import { skills } from '@/data/loader.js'
 
 
 const route = useRoute()

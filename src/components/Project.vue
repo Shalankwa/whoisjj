@@ -3,10 +3,7 @@ import { ref, onMounted } from 'vue'
 import Seal from '../components/Seal.vue'
 import LangBadge from '../components/LangBadge.vue';
 import Barcode from '../assets/images/barcode.svg'
-
-
-const project = ref(null)
-var rotation = ref("0deg")
+import { getProject } from '@/data/loader.js'
 
 const props = defineProps({
   name: {
@@ -26,13 +23,15 @@ const props = defineProps({
     type: String,
     required: false,
     default: "0deg",
-  },
-  primaryColor: {
-    type: String,
-    required: false,
-    default: "#b3bd5c",
-  },
+  }
 })
+
+const project = getProject(props.name)
+const primaryColor = project.primaryColor
+var rotation = ref("0deg")
+
+const projectCovers = import.meta.glob('@/assets/images/projects/*.png', { eager: true, import: 'default' });
+const coverImage = projectCovers[`/src/assets/images/projects/${project.coverImage}`];
 
 defineExpose({
   setRotation(angle) {
@@ -48,27 +47,24 @@ onMounted(() => {
 
 <template>
   <div class="frame__3d">
-    <div class="project__box" ref="project">
+    <div class="project__box">
       <div class="project__front">
-        <div class="project-title">{{ name }}</div>
+        <div class="project-title">{{ project.name }}</div>
         <div class="project-cover" id="cover">
-          <img src="../assets/images/retro_pc.png" alt="project cover" class="project-cover-img">
+          <img :src="coverImage" alt="project cover" class="project-cover-img">
         </div>
-        <LangBadge class="project-lang" lang="Python"/>
+        <LangBadge class="project-lang" :lang="project.lang" :image="project.icon"/>
         <Seal class="project-seal"/>
       </div>
       <div class="project__left">
-        <div class="project__left-title">{{ name }}</div>
+        <div class="project__left-title">{{ project.name }}</div>
       </div>
       <div class="project__right"></div>
       <div class="project__back">
-        <h2 class="p-2">{{ name }}</h2> 
-        <p class="p-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        
+        <h2 class="p-2">{{ project.name }}</h2> 
+        <p class="p-2">{{ project.description }}</p>
         <img :src="Barcode" alt="barcode" class="project__back-barcode"/>
-        <a href="https://github.com/Shalankwa/whoisjj" target="_blank" rel="noopener noreferrer" class="project__back-nintendont">Github</a>
+        <a :href="project.url" target="_blank" rel="noopener noreferrer" class="project__back-nintendont">Github</a>
       </div>
     </div>
   </div>
@@ -117,10 +113,10 @@ $depth-neg: calc($depth * -1);
     text-transform: uppercase;
     font-weight: 800;
     text-align: center;
-    top: 52%;
+    top: 54%;
     left: 0;
     width: 100%;
-    font-size: 34px;
+    font-size: 28px;
     color: v-bind(primaryColor);
     transform: rotate(-10deg);
     overflow: clip;
@@ -136,9 +132,10 @@ $depth-neg: calc($depth * -1);
 
     &-img {
       position: absolute;
-      transform: rotate(10deg);
-      top: 10%;
-      left: 0;
+      top: 60%;
+      left: 50%;
+      width: calc(v-bind(width) * 0.8);
+      transform: translate(-50%, -50%) rotate(10deg);
       clip-path: url(#cover);
     }
   }
