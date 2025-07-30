@@ -54,10 +54,10 @@ loadData()
       </div>
     </div>
     <div class="skill-description p-4">
-      description here
+      {{ skilldata.description }}
     </div>
     <div class="skill-level p-4">
-      <p>Lvl: {{ currentLvl }}</p>
+      <p>Lvl {{ skilldata.proficiency * 100 }}: {{ currentLvl }}</p>
       <LevelBar :fillPercent="skilldata.proficiency * 100"/>
     </div>
   </div>

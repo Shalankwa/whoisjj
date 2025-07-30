@@ -84,5 +84,13 @@
         "colour": "darkgray",
     "icon": "cicd.svg",
     "category": "devops"
+  },
+  "curiousity": {
+    "name": "Endless Curiosity",
+    "colour": "#9654b0",
+    "icon": "curiosity.svg",
+    "category": "#(*_<(*%$#@:",
+    "description": "An endless hunger for knowledge. A need for understanding. A desire to unearth the unknown. A thirst for the infinite.",
+    "proficiency": 1
   }
 }
