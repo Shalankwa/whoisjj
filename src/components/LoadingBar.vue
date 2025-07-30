@@ -33,6 +33,7 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   font-size: 24px;
+  z-index: 10;
 
   &.hide {
     opacity: 0;
@@ -45,7 +46,6 @@ onMounted(() => {
   height: 20px;
   transition: all 0.5s ease-in-out;
   border: 2px solid #cdff8b;
-
 }
 
 .loading-bar-inner {

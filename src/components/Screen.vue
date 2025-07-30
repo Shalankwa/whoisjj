@@ -92,7 +92,7 @@ const isSkillsPage = computed(() => route.path.startsWith('/skills'))
     transparent 4px
   );
   pointer-events: none;
-  z-index: 2;
+  z-index: 20;
 }
 
 @media screen and (max-width: $desktop-width) {
