@@ -96,6 +96,14 @@ const isSkillsPage = computed(() => route.path.startsWith('/skills'))
 }
 
 @media screen and (max-width: $desktop-width) {
+  .main-content {
+    margin-left: 0;
+
+    &.right {
+      margin-left: 0;
+    }
+  }
+
   .pc-screen {
     h2 {
       font-size: 18px;
