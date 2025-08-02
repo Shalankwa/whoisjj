@@ -3,13 +3,15 @@
     "name": "Golang",
     "colour": "#00acd7",
     "icon": "golang.svg",
-    "category": "language"
+    "category": "language",
+    "proficiency": 0.66
   },
   "python": {
     "name": "Python",
     "colour": "#FFD43B",
     "icon": "python.svg",
-    "category": "language"
+    "category": "language",
+    "proficiency": 0.22
   },
   "ruby": {
     "name": "Ruby",
@@ -82,5 +84,13 @@
         "colour": "darkgray",
     "icon": "cicd.svg",
     "category": "devops"
+  },
+  "curiousity": {
+    "name": "Endless Curiosity",
+    "colour": "#9654b0",
+    "icon": "curiosity.svg",
+    "category": "#(*_<(*%$#@:",
+    "description": "An endless hunger for knowledge. A need for understanding. A desire to unearth the unknown. A thirst for the infinite.",
+    "proficiency": 1
   }
 }
