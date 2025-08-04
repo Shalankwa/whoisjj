@@ -81,7 +81,7 @@
   },
   "ci-cd": {
     "name": "CI/CD",
-        "colour": "darkgray",
+    "colour": "darkgray",
     "icon": "cicd.svg",
     "category": "devops"
   },
